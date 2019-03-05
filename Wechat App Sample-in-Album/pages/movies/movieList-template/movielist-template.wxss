@@ -1,0 +1,36 @@
+@import "/pages/movies/movie-template/movie-template.wxss";
+ /* 导入第二层嵌套的css样式 */
+.movielist-container{
+  background-color: #fff;
+  display:flex;
+  flex-direction: column;
+  height:520rpx;
+}
+.movie-head{
+  padding:30rpx 20rpx 22rpx;
+
+}
+.slogan{
+  font-size:24rpx;
+}
+.more{
+  float:right;
+  margin-right:20rpx;
+  margin-top:2rpx;
+}
+.more-text{
+  vertical-align: middle;
+  margin-right:10rpx;
+  color:#1f4ba5;
+  font-size:24rpx;
+  
+}
+.more-img{
+  width:9rpx;
+  height:16rpx;
+  vertical-align: middle
+}
+.movies-container{
+  display: flex;
+  flex-direction: row;
+}

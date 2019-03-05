@@ -1,0 +1,60 @@
+<import src="/pages/movies/stars-template/star-template.wxml" />
+<view class="container">
+  <image class="head-img" src="{{movie.movieImg}}" mode="aspectFill"></image>
+  <!--image的mode属性，用来处理从api取到的图片，一般默认模式aspectFill是用得很少的，因为这种模式会将图片变形,常用的模式是aspectFit-->
+  <!--一般来说，图片的缩放必须要在定高或者定宽的时候裁剪才会有意义，所以一般在使用mode属性的时候，都会用一个class去约定这个图片的长或者宽高从而进行合适的缩放，不过若不添加这种限制，小程序默认的宽为320px，也就是image组件的默认宽度-->
+  <!--除此之外，mode还有top、bottom等属性，相当于切割图片，保留所指定的部分-->
+  <view class="head-img-hover" data-src="{{movie.movieImg}}" catchtap="viewMoviePostImg">
+    <text class="main-title">{{movie.title}}</text>
+    <text class="sub-title">{{movie.country+"  * "+movie.year}}</text>
+    <view class="like ">
+      <text class="highlight-font">{{movie.wishCount}}</text>
+      <text class="plain-font">人喜欢</text>
+      <text class="highlight-font"> {{movie.commentCount}}</text>
+      <text class="plain-font">条评论</text>
+    </view>
+  </view>
+  <image class="movie-img" src="{{movie.movieImg}}" data-src="{{movie.movieImg}}" catchtap='viewMoviePostImg' />
+  <view class="summary">
+    <view class="original-title">
+      <text>{{movie.originalTitle}}</text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">评分</text>
+      <template is="starTemplate" data="{{stars:movie.stars,score:movie.score}}" />
+    </view>
+    <view class="flex-row">
+      <text class="mark">导演</text>
+      <text>{{movie.director.name}}</text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">影人</text>
+      <text>{{movie.casts}}</text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">类型</text>
+      <text>{{movie.generes}}</text>
+    </view>
+    <view class="hr"></view>
+    <view class="synopsis">
+      <text class="synopsis-font">剧情简介</text>
+      <text class="summary-content">{{movie.summary}}</text>
+    </view>
+    <view class="hr"></view>
+    <view class="cast">
+      <text class="cast-font">影人</text>
+      <scroll-view class="cast-imgs" scroll-x="true" scroll-y="false" style="width:100%">
+        <block wx:for="{{movie.castsInfo}}">
+          <view class="cast-container">
+            <image class="cast-img" src="{{item.img}}"></image>
+            <text class="cast-name">{{item.name}}</text>
+          </view>
+        </block>
+
+      </scroll-view>
+
+
+
+    </view>
+  </view>
+</view>

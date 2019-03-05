@@ -1,0 +1,18 @@
+<import src="../movie-template/movie-template.wxml" />
+<!--引用movie-template，这是第二层嵌套-->
+<template name="movielistTemplate">
+  <view class="movielist-container">
+    <view class="movie-head">
+      <text class="slogan">{{catalogue}}</text>
+      <view class="more" >
+        <text class="more-text" catchtap="onMovieDetail" data-category="{{catalogue}}">更多</text>
+        <image src="/pages/icons/arrow-right.png" class="more-img"></image>
+      </view>
+    </view>
+    <view class="movies-container">
+      <block wx:for="{{movies}}">
+        <template is="movieTemplate" data="{{...item}}" />
+      </block>
+    </view>
+  </view>
+</template>

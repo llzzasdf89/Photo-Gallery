@@ -1,0 +1,10 @@
+@import "/pages/movies/movie-template/movie-template.wxss";
+.view-container{
+  float:left;
+  margin-bottom:40rpx;
+
+}
+.grid-container{
+  height:1300rpx;/* scroll-view组件必须设置固定高度才会触发onscrolltolower函数*/
+  margin:40rpx 0 40rpx 6rpx;
+}

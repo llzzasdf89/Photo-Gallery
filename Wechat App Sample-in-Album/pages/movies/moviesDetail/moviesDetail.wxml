@@ -1,0 +1,3 @@
+<import src="/pages/movies/moviesDetail/movieDetail-template/movieDetail-template.wxml"/>
+
+<template is ="movieDetailTemplate" data="{{movies}}"></template>

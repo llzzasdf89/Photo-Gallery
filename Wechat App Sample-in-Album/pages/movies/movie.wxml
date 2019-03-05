@@ -1,0 +1,23 @@
+<import src="movieList-template/movielist-template.wxml" />
+<import src="/pages/movies/moviesDetail/movieDetail-template/movieDetail-template.wxml" />
+<!--三层template嵌套，这是第一层嵌套-->
+<view class="search">
+  <icon type="search" size="13" color="#405f80" class="search-img"></icon>
+  <input type="text" placeholder='搜索，只能查询电影名字' placeholder-class='placeholder' bindfocus='onBindfocus' bindconfirm="onBindChange" />
+  <image src="/pages/icons/xx.png" catchtap="onCancelimgtap" class="xx" wx:if="{{xxShow}}"></image>
+</view>
+<!--搜索页面-->
+<view class="container" wx:if="{{containerShow}}">
+  <view class="movies-template">
+    <template is="movielistTemplate" data="{{...inTheater}}" />
+  </view>
+  <view class="movies-template">
+    <template is="movielistTemplate" data="{{...comingSoon}}" />
+  </view>
+  <view class="movies-template">
+    <template is="movielistTemplate" data="{{...top250}}" />
+  </view>
+</view>
+<view class="search-pannel" wx:if="{{searchPannelShow}}">
+  <template is="movieDetailTemplate" data="{{...searchResult}}" />
+</view>

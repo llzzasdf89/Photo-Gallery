@@ -1,0 +1,11 @@
+<view class="container">
+  <view>
+    <image src="/pages/images/IMG_3154.jpg" class="user-Interface"></image>
+  </view>
+
+  <text class="welcome-word">Hello Richard,</text>
+  <view class="btn" catchtap="navigation">
+    <text class="btn-word">点击进入小程序</text>
+  </view>
+
+</view>

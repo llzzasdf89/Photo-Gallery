@@ -1,0 +1,15 @@
+<template name="starTemplate">
+  <view class="stars-container">
+    <view class="stars">
+      <block wx:for="{{stars}}" wx:for-item="i">
+        <image wx:if="{{i}}" src="/pages/icons/star.png"> </image>
+        <!-- 由于i在数据stars里面存在形式为1或者0，其中1的真值为真，0为假，据此就可以判断什么时候用灰色的星星代替，什么时候用亮的星星-->
+        <image wx:else src="/pages/icons/none-star.png"></image>
+
+
+      </block>
+    </view>
+    <text class="star-score">{{average}}</text>
+
+  </view>
+</template>

@@ -1,0 +1,9 @@
+<import src="../stars-template/star-template.wxml" />
+<!--引用star-template，这是第三层嵌套-->
+<template name="movieTemplate">
+  <view class="movie-container" catchtap='onGoMovieDetail' data-movieId="{{movieId}}">
+    <image src="{{coverageUrl}}" class="movie-img"></image>
+    <text class="movie-title">{{title}}</text>
+    <template is="starTemplate" data="{{stars:stars,score:average}}" />
+  </view>
+</template>

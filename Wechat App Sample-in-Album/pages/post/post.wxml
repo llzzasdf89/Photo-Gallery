@@ -1,0 +1,32 @@
+<import src="item-template/post-template.wxml" />
+<view>
+  <view>
+    <!--浮动窗口-->
+    <swiper autoplay="true" indicator-dots="true" catchtap="onNavigation">
+      <swiper-item>
+        <image src="../images/WechatIMG37.jpeg" data-detailNum="1"></image>
+        <view class="Floating-window sub1">
+          樱花盛开之时
+        </view>
+      </swiper-item>
+      <swiper-item>
+        <image src="../images/WechatIMG35.jpeg" data-detailNum="0">
+        </image>
+        <view class="Floating-window sub2">渔歌唱晚</view>
+      </swiper-item>
+      <swiper-item>
+        <image src="../images/江南印象.jpg" data-detailNum="2">
+        </image>
+        <view class="Floating-window sub3">
+          江南印象
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="container">
+    <view wx:for="{{post}}" catchtap="GoDetail" data-DetailNum="{{item.DetailNum}}">
+      <template is="moviesItem" data="{{...item}}" />
+    </view>
+  </view>
+
+</view>
